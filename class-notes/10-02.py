@@ -123,13 +123,6 @@
 # 	print(f"{invitees[num]} gets a goody bag!")
 
 
-name = list("Melissa")
-print(name)
-name = name + name[0] + "ay"
-pig_latin_name = 
-print(pig_latin_name)
-
-
 
 # my_colors = ["purple", "pink", "blue", "green"]
 # for color in my_colors:
@@ -147,4 +140,5 @@ print(pig_latin_name)
 # 	my_colors[index] = len(color)
 
 # print(my_colors)	
+
 
