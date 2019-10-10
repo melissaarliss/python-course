@@ -12,12 +12,6 @@ BOP! (pretty sure this is a space!)
 4 beeps, 0 boops
 """
 
-# create a list of lists for the beeps and boops
-# grab the two ints in the inner list 
-# add the ints together to get a value
-# grab the letter at that index in the alphabet string
-# print the letter
-
 import string
 alphabet = string.ascii_uppercase
 
@@ -35,30 +29,39 @@ message = [
 	[4, 0]
 ]
 
-translated_letters = ""
+translation = ""
 
 def translate(beep, boop):
 	total = beep + boop
-	return(alphabet[code-1])
+	return alphabet[total-1]
 
 for pair in message:
 	if type(pair) == list:
-		translate(beep, boop)
+		letter = translate(pair[0], pair[1])
+		translation += letter
+	else:
+		translation += " "	
+
+print(translation)
 
 
-			code = beep + boop
+
+
+
+decoded_message = []
+
+def decode():
+	for pair in message:
+		if type(pair) == list:	
+			code = pair[0] + pair[1]
 			letter = alphabet[code-1]
-			# print(letter)
-			translated_letters.append(letter)
+			decoded_message.append(letter)
 		else:
-			letter = " "	
-	# print(translation)
-	real_translation = "".join(translated_letters)
-	print(real_translation)	
+			letter = " "
+			decoded_message.append(letter)	
+	real_translation = "".join(decoded_message)
+	return(real_translation)
 
-print()
-
-
-
+print(decode())
 
 
