@@ -106,17 +106,6 @@ state_capitals = {
   "Texas" : "Austin"
   }
 
-# def create_list(collection):
-# 	# create a list from the values
-# 	values = []
-# 	for key in collection:
-# 		values.append(collection[key])
-# 	return(values)	
-
-# capitals = create_list(state_capitals)
-
-# print(capitals)
-
 def reverse_lookup(dict, value):
 	for state in dict:
 		capital = dict[state]
