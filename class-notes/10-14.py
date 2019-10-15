@@ -1,14 +1,14 @@
 ########### DICTIONARIES ##################
 
-my_list = ["dog", "drink", "fruit"]
+# my_list = ["dog", "drink", "fruit"]
 
-my_dict = {
-	"puppy": "young dog",
-	"tea": "herbal drink",
-	"pineapple": "tropical fruit",
-	"values": my_list,
-	"my_bday": "December 5"
-}
+# my_dict = {
+# 	"puppy": "young dog",
+# 	"tea": "herbal drink",
+# 	"pineapple": "tropical fruit",
+# 	"values": my_list,
+# 	"my_bday": "December 5"
+# }
 
 # dictionaries are unordered, unsorted - can't access by index
 # values can be any data type. keys are basically always strings but are written in snake case
@@ -20,10 +20,10 @@ my_dict = {
 # print("dogs" in my_dict)
 
 # add key-value pair to the dictionary
-my_dict["mammoth"] = "wooly"
+# my_dict["mammoth"] = "wooly"
 
 # reassingment / update a value in the dict
-my_dict["pineapple"] = "prickly and sour"
+# my_dict["pineapple"] = "prickly and sour"
 
 # indicates the number of key value pairs in the dictionary
 # print(len(my_dict))
@@ -36,13 +36,14 @@ my_dict["pineapple"] = "prickly and sour"
 # 	elif len(key) == 3:
 # 		print(f"{key}: {my_dict[key]}")
 
+############# COUNT LETTERS IN A WORD ##############
 
-my_name = {
-	"s": 1,
-	"t": 1,
-	"e": 2,
-	"v": 1
-}
+# my_name = {
+# 	"s": 1,
+# 	"t": 1,
+# 	"e": 2,
+# 	"v": 1
+# }
 
 # for key in my_name:
 # 	if my_name[key] == 1:
@@ -50,6 +51,7 @@ my_name = {
 # 	elif my_name[key] == 2:
 # 		print(f"The letter {key} appears in my name {my_name[key]} twice.")
 
+### IMPROVED ###
 
 # name = "Melissa"
 # letter_count = {}
@@ -68,36 +70,41 @@ my_name = {
 # 	if count > 1:
 # 		statement += "'s"
 # 	print(statement)	
+
+######### FIND MOST POPULAR WORD IN LIST ##################
 		
-# words = ["pillow", "water", "hello", "pillow"]
+words = ["pillow", "water", "hello", "pillow"]
 
-# # creates a dictionary with the words in the list and how many times it appears
-# def most_popular_word(collection):
-# 	lookup = {}
-# 	for item in collection:
-# 		if item in lookup:
-# 			lookup[item] += 1
-# 		else:
-# 			lookup[item] = 1	
-# 	return lookup
+# creates a dictionary with the words in the list and how many times each one appears
+def create_lookup(collection):
+	lookup = {}
+	for item in collection:
+		if item in lookup:
+			lookup[item] += 1
+		else:
+			lookup[item] = 1	
+	return lookup
 
-# def find_most_popular(collection):
-# 	# creates a dictionary using the most_popular_world function
-# 	lookup = most_popular_word(words)
+def find_most_popular(collection):
+	# creates a dictionary from the words list by calling the create_lookup function
+	lookup = create_lookup(words)
 
-# 	# create a counter variable and variable for the word
-# 	highest_number = 0
-# 	popular_word = ""
+	# creates a counter and variable for the most popular word
+	highest_number = 0
+	popular_word = ""
 
-# 	# loops through lookup dict and compares the current value to the counter, and resets the counter and the word if it's greater
-# 	for word in lookup:
-# 		if lookup[word] > highest_number:
-# 			highest_number = lookup[word]
-# 			popular_word = word	
+	# loops through lookup dict, compares the value of each key (how many times that word appears) to the counter
+	for word in lookup:
+		# if the value is higher than the counter currently is, the counter is reset to that value and the word is assigned to popular_world
+		if lookup[word] > highest_number:
+			highest_number = lookup[word]
+			popular_word = word	
 	
-# 	print(f"{highest_number}, {popular_word}")		
+	print(highest_number, popular_word)		
 
-# find_most_popular(words)
+find_most_popular(words)
+
+############ REVERSE LOOKUP OF DICTIONARY #######################
 
 state_capitals = {
   "Alaska" : "Juneau",
@@ -112,7 +119,7 @@ def reverse_lookup(dict, value):
 		if capital == value:
 			return state
 
-print(reverse_lookup(state_capitals, "Denver"))
+print(reverse_lookup(state_capitals, "Austin"))
 
 
 
