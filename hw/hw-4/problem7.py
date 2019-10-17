@@ -5,4 +5,4 @@ def cereal_time(breakfast):
 		else:
 			print(f"{cereal} is yummy!")
 
-cereal_time(["Froot Loops", "Cheerios", "Frosted Mini Wheats", "Capn Crunch"])				
+cereal_time(["Froot Loops", "Cheerios", "Frosted Mini Wheats", "Capn Crunch"])
