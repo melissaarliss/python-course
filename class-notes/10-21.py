@@ -116,19 +116,34 @@ class TeaCup():
 
 class Band():
 	ct = 0
+	valid_genres = ("pop", "rock", "r&b")
 
 	def __init__(self, genre, band_name, albums_released=0):
-		self.genre = genre
-		self.band_name = band_name
-		self.albums_released = albums_released
-		Band.ct += 1
-		print(f"There are now {Band.ct} bands created.")
+		# "input validation" - only creates objects if it's in the valid_genres tuple
+		if genre not in Band.valid_genres:
+			print("I don't know that genre.")
+		else:	
+			self.genre = genre
+			self.band_name = band_name
+			self.albums_released = albums_released
+			Band.ct += 1
+			print(f"There are now {Band.ct} bands created.")
 
 	def print_stats(self):
 		print(f"The {self.genre} band {self.band_name} has {self.albums_released} albums released.")	
 
-# queen = Band("rock", "Queen", 15)
-# mitski = Band("pop", "Mitski", 3)
+# queen = Band("rock", "Queen", 15)		
+# ts = Band("pop", "Taylor Swift", 5)
+
+# this will overwrite the previous queen object
+# queen = Band("pop", "The Beatles", 10)
+
+# won't allow this obj to be instantiated since it's a different genre
+# other = Band("deadmau5", "electronica", 8)
+# print(Band.number_of_bands)
+
+
+
 
 class Bank():
 	total_balance = 0
@@ -148,7 +163,6 @@ class Bank():
 		self.balance -= amt
 		Bank.total_balance -= amt
 		print(f"Your balance is now ${self.balance}.")	
-
 
 bank = Bank("savings", 100)
 
