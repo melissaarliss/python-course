@@ -1,3 +1,5 @@
+import csv
+
 employees = [
   {
     "first_name": "Bill", 
@@ -44,23 +46,19 @@ employees = [
   }
 ]
 
-with open("tps_report.csv", "w", newline="") as csvfile:
+with open("./hw/hw-8/tps_report.csv", "w", newline="") as csvfile:
     fieldnames = ["first_name", "last_name", "job_title", "hire_date", "performance_review", "finished_review"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
+    
     writer.writeheader()
 
     for person in employees:
         person["finished_review"] = "yes"
 
-    if person["first_name"] == "Bill" or person["job_title"] == "Consultant":
-        person["performance_review"] = "poor"
-    else:
-        person["performance_review"] = "excellent"
-
-writer.writerow(person)
-
-
-
-
+        if person["first_name"] == "Bill" or person["job_title"] == "Consultant":
+            person["performance_review"] = "poor"
+        else:
+            person["performance_review"] = "excellent"
+        
+        writer.writerow(person)
 
