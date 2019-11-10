@@ -8,7 +8,7 @@ for place in destinations:
 	lat = geocoder.arcgis(place).lat
 	lng = geocoder.arcgis(place).lng
 	full_api_url = (f"{api_base_url}{lat},{lng}")
-	result = requests.request("GET", full_api_url).json()
+	result = requests.get(full_api_url).json()
 	summ = result["currently"]["summary"]
 	temp = "{0:.1f}".format(result["currently"]["temperature"])
 	print(f"{place} is located at ({lat}, {lng}). The weather is {summ} with a temperature of {temp}\u00B0F.\n")
