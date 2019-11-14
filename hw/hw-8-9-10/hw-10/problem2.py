@@ -11,4 +11,4 @@ for place in destinations:
 	result = requests.get(full_api_url).json()
 	summ = result["currently"]["summary"]
 	temp = result["currently"]["temperature"]
-	print(f"{place} is located at ({lat}, {lng}). The weather is {summ} with a temperature of {temp}.")
+	print(f"{place} is located at ({lat},{lng}). The weather is {summ} with a temperature of {temp}.")
